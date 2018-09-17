@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Implementasi Array Pada Vue JS</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li>{{kendaraan[0]}}</li>
+            <li>{{kendaraan[1]}}</li>
+            <li>{{kendaraan[2]}}</li>
+        </ul>
+    </div>
+
+    <p>Array Dengan directive v-for</p>
+    <div id="app2">
+        <ul>
+            <li v-for="kd in kendaraannya">{{ kd }}</li>
+        </ul>
+    </div>
+    <p>Menambah Dan Hapus Data Array</p>
+
+    <div id="app3">
+        <input type="text" v-model="isi">
+        <button @click="tambah">Tambah Data</button>
+        <ul>
+            <li v-for="kd2 in kendaraannya2">
+                <button @click="hapus(index)">Hapus</button>
+                {{ kd2 }}
+
+
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="app5">
+        <p>Search Pada Array</p>
+        <input type="text" v-model="cararray" placeholder="Cari Data Array">
+        <ul v-for="kd4 in filterkendaraan">
+            <li>
+                Jenisnya : {{ kd4.jenis}}, Merknya : {{ kd4.merk}}, Warnanya : {{ kd4.warna}},
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="apps.js"></script>
+</body>
+
+</html>
